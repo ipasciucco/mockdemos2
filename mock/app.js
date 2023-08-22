@@ -106,7 +106,7 @@ async function handlePostProject(project, projectPath, restOfPath, fileFull, fil
                   const userAgentHeader = requestHeaders.find(
                     (header) => header.name.toLowerCase() === "user-agent"
                   );
-                  if ((userAgentHeader.value.includes("iPhone")) && (projectPathSplit === "inbox")) { // Si es mobile, se devuelve la respuesta de mobile
+                  if ((userAgentHeader.value.includes("Mobile")) && (projectPathSplit === "inbox")) { // Si es mobile, se devuelve la respuesta de mobile
                     console.log("userAgentHeader:", userAgentHeader)
                     const encodedResponse = item.response.content.text;
                     const decodedResponse = Buffer.from(encodedResponse, 'base64').toString('utf-8');
