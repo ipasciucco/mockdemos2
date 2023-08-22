@@ -1,0 +1,7 @@
+---
+applications:
+- name: mock
+  random-route: true
+  path: mock
+  memory: 256M
+  buildpack: nodejs_buildpack
