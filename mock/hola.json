@@ -1,0 +1,95 @@
+{
+    "properties": {
+        "cmis:objectId": {
+            "id": "cmis:objectId",
+            "localName": "cmis:objectId",
+            "displayName": "cmis:objectId",
+            "queryName": "cmis:objectId",
+            "type": "id",
+            "cardinality": "single",
+            "value": "06af6c8000fbe68f5676ff46"
+        },
+        "cmis:name": {
+            "id": "cmis:name",
+            "localName": "cmis:name",
+            "displayName": "cmis:name",
+            "queryName": "cmis:name",
+            "type": "string",
+            "cardinality": "single",
+            "value": "root"
+        },
+        "cmis:lastModifiedBy": {
+            "id": "cmis:lastModifiedBy",
+            "localName": "cmis:lastModifiedBy",
+            "displayName": "cmis:lastModifiedBy",
+            "queryName": "cmis:lastModifiedBy",
+            "type": "string",
+            "cardinality": "single",
+            "value": "{sap:builtin}admin"
+        },
+        "cmis:objectTypeId": {
+            "id": "cmis:objectTypeId",
+            "localName": "cmis:objectTypeId",
+            "displayName": "cmis:objectTypeId",
+            "queryName": "cmis:objectTypeId",
+            "type": "id",
+            "cardinality": "single",
+            "value": "cmis:folder"
+        },
+        "cmis:lastModificationDate": {
+            "id": "cmis:lastModificationDate",
+            "localName": "cmis:lastModificationDate",
+            "displayName": "cmis:lastModificationDate",
+            "queryName": "cmis:lastModificationDate",
+            "type": "datetime",
+            "cardinality": "single",
+            "value": 1694459750096
+        },
+        "cmis:createdBy": {
+            "id": "cmis:createdBy",
+            "localName": "cmis:createdBy",
+            "displayName": "cmis:createdBy",
+            "queryName": "cmis:createdBy",
+            "type": "string",
+            "cardinality": "single",
+            "value": "{sap:builtin}admin"
+        },
+        "cmis:baseTypeId": {
+            "id": "cmis:baseTypeId",
+            "localName": "cmis:baseTypeId",
+            "displayName": "cmis:baseTypeId",
+            "queryName": "cmis:baseTypeId",
+            "type": "id",
+            "cardinality": "single",
+            "value": "cmis:folder"
+        },
+        "sap:owner": {
+            "id": "sap:owner",
+            "localName": "sap:owner",
+            "displayName": "sap:owner",
+            "queryName": "sap:owner",
+            "type": "string",
+            "cardinality": "single",
+            "value": "{sap:builtin}admin"
+        },
+        "cmis:creationDate": {
+            "id": "cmis:creationDate",
+            "localName": "cmis:creationDate",
+            "displayName": "cmis:creationDate",
+            "queryName": "cmis:creationDate",
+            "type": "datetime",
+            "cardinality": "single",
+            "value": 1694459750096
+        },
+        "cmis:changeToken": {
+            "id": "cmis:changeToken",
+            "localName": "cmis:changeToken",
+            "displayName": "cmis:changeToken",
+            "queryName": "cmis:changeToken",
+            "type": "string",
+            "cardinality": "single",
+            "value": "2"
+        }
+    },
+    "exactACL": false
+}

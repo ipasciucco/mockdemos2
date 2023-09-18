@@ -1,0 +1,73 @@
+{
+    "VCAP_SERVICES": {
+        "xsuaa": [
+            {
+                "name": "my-uaa-service",
+                "label": "xsuaa",
+                "tags": [
+                    "xsuaa"
+                ],
+                "credentials": {
+                    "tenantmode": "shared",
+                    "sburl": "https://internal-xsuaa.authentication.us10.hana.ondemand.com",
+                    "subaccountid": "bbe5a617-9715-4ba5-94e8-2e909794377c",
+                    "credential-type": "instance-secret",
+                    "clientid": "sb-na-7231b184-1590-4728-85ab-37a41c6296fd!t21078",
+                    "xsappname": "na-7231b184-1590-4728-85ab-37a41c6296fd!t21078",
+                    "clientsecret": "yDC51yHwoiAUyBmLmTJkwVSdT0s=",
+                    "url": "https://bluebootcloudfoundry.authentication.us10.hana.ondemand.com",
+                    "uaadomain": "authentication.us10.hana.ondemand.com",
+                    "verificationkey": "-----BEGIN PUBLIC KEY-----\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAjAGLGuMSM1oG+iDh2sn1\nj+fLZtbkp28+zZ20Afv+668t/JP9YK8J1FM12javKyFLnoC764RLBXIia1Z3c5aE\nB2MlbShVoKVYzO89klKdNc8FdT+QkOLSTF4JKnnUwjJv3Jsp+rHSF3lICKr7Msu3\npMIVXqYh9GBmk5tEOlR3TOc3VSf+jM70uc7/yYNJrGiRJp4DkMShd8PFm6B9qxnY\naJoIM5zIUMmASV0sy76c5G/TzV6X0qhwSmoN+cC/Hjo7J6L4BdOr6kNLRnlg4DiV\nc53g9MW4lzu0L40Nm0Y+dAhXqRSowGKTFruX0e4rpJxJt7BK5mePS7GR+SaqS0fK\njQIDAQAB\n-----END PUBLIC KEY-----",
+                    "apiurl": "https://api.authentication.us10.hana.ondemand.com",
+                    "identityzone": "bluebootcloudfoundry",
+                    "identityzoneid": "bbe5a617-9715-4ba5-94e8-2e909794377c",
+                    "tenantid": "bbe5a617-9715-4ba5-94e8-2e909794377c",
+                    "zoneid": "bbe5a617-9715-4ba5-94e8-2e909794377c"
+                  }
+            }
+        ],
+        "destination": [
+            {
+                "name": "my-destination-service",
+                "label": "destination",
+                "tags": [
+                    "destination"
+                ],
+                "credentials":{
+                    "uri": "https://api-sdm-di.cfapps.us10.hana.ondemand.com/",
+                    "endpoints": {
+                      "ecmservice": {
+                        "url": "https://api-sdm-di.cfapps.us10.hana.ondemand.com/",
+                        "timeout": 900000
+                      },
+                      "migrationservice": {
+                        "url": "https://sdm-migration.cfapps.us10.hana.ondemand.com"
+                      }
+                    },
+                    "sap.cloud.service": "com.sap.ecm.reuse",
+                    "saasregistryenabled": true,
+                    "html5-apps-repo": {
+                      "app_host_id": "9571327e-cbde-41cd-ac47-dd32c4591b16"
+                    },
+                    "uaa": {
+                      "tenantmode": "dedicated",
+                      "sburl": "https://internal-xsuaa.authentication.us10.hana.ondemand.com",
+                      "subaccountid": "bbe5a617-9715-4ba5-94e8-2e909794377c",
+                      "credential-type": "instance-secret",
+                      "clientid": "sb-152ab5f5-6fca-4ba9-ad7f-a32d03da6344!b21078|sdm-di-DocumentManagement-sdm_integration!b6332",
+                      "xsappname": "152ab5f5-6fca-4ba9-ad7f-a32d03da6344!b21078|sdm-di-DocumentManagement-sdm_integration!b6332",
+                      "clientsecret": "sSd0rLTQcnvW2dIukVD3yy3v9CY=",
+                      "url": "https://bluebootcloudfoundry.authentication.us10.hana.ondemand.com",
+                      "uaadomain": "authentication.us10.hana.ondemand.com",
+                      "verificationkey": "-----BEGIN PUBLIC KEY-----\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAjAGLGuMSM1oG+iDh2sn1\nj+fLZtbkp28+zZ20Afv+668t/JP9YK8J1FM12javKyFLnoC764RLBXIia1Z3c5aE\nB2MlbShVoKVYzO89klKdNc8FdT+QkOLSTF4JKnnUwjJv3Jsp+rHSF3lICKr7Msu3\npMIVXqYh9GBmk5tEOlR3TOc3VSf+jM70uc7/yYNJrGiRJp4DkMShd8PFm6B9qxnY\naJoIM5zIUMmASV0sy76c5G/TzV6X0qhwSmoN+cC/Hjo7J6L4BdOr6kNLRnlg4DiV\nc53g9MW4lzu0L40Nm0Y+dAhXqRSowGKTFruX0e4rpJxJt7BK5mePS7GR+SaqS0fK\njQIDAQAB\n-----END PUBLIC KEY-----",
+                      "apiurl": "https://api.authentication.us10.hana.ondemand.com",
+                      "identityzone": "bluebootcloudfoundry",
+                      "identityzoneid": "bbe5a617-9715-4ba5-94e8-2e909794377c",
+                      "tenantid": "bbe5a617-9715-4ba5-94e8-2e909794377c",
+                      "zoneid": "bbe5a617-9715-4ba5-94e8-2e909794377c"
+                    }
+                  }
+            }
+        ]
+    }
+}
