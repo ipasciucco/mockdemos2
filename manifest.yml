@@ -5,3 +5,6 @@ applications:
   path: mock
   memory: 128M
   buildpack: nodejs_buildpack
+  services:
+  - dms-xsuaa-service
+  - dms 
