@@ -301,15 +301,16 @@ app.use((req, res, next) => {
 const xsenv = require("@sap/xsenv");
 const axios = require("axios");
 const FormData = require("form-data");
-// xsenv.loadEnv();
-const dest_service = xsenv.getServices({ dest: { tag: "destination" } }).dest;
+xsenv.loadEnv();
 const uaa_service = xsenv.getServices({ uaa: { tag: "xsuaa" } }).uaa;
+const dest_service = xsenv.getServices({ sdm: { tag: 'sdm' } }).credentials
+
 const sUaaCredentials =
   dest_service.uaa.clientid + ":" + dest_service.uaa.clientsecret;
-
 const sOAuthURL = uaa_service.url;
 const sDMSURL = "https://api-sdm-di.cfapps.us10.hana.ondemand.com/";
-
+var services = xsenv.readServices();
+console.log(services.serviceInstance);
 const _fetchJwtToken = async function () {
   // This is to get the oauth token , which is used to create the folder ID
   return new Promise((resolve, reject) => {
