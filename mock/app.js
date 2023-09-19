@@ -303,7 +303,7 @@ const axios = require("axios");
 const FormData = require("form-data");
 xsenv.loadEnv();
 const uaa_service = xsenv.getServices({ uaa: { tag: "xsuaa" } }).uaa;
-const dest_service = xsenv.getServices({ sdm: { tag: 'sdm' } }).credentials
+const dest_service = xsenv.getServices({ dest: { tag: "sdm" } }).dest;
 
 const sUaaCredentials =
   dest_service.uaa.clientid + ":" + dest_service.uaa.clientsecret;
