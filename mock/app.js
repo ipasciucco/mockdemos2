@@ -312,7 +312,6 @@ const sDMSURL = "https://api-sdm-di.cfapps.us10.hana.ondemand.com/";
 var services = xsenv.readServices();
 console.log(services.serviceInstance);
 const _fetchJwtToken = async function () {
-  // This is to get the oauth token , which is used to create the folder ID
   return new Promise((resolve, reject) => {
     const tokenUrl =
       sOAuthURL +
@@ -357,13 +356,51 @@ const _ReadRepositories = async function (jwtToken) {
   });
 };
 
+const _GetRepositoryId = async function (jwtToken, sRepositoryName) {
+  return new Promise((resolve, reject) => {
+    const sURL = sDMSURL + "rest/v2/repositories";
+
+    const formData = new FormData();
+    let headers = formData.getHeaders();
+    headers["Authorization"] = "Bearer " + jwtToken;
+
+    const config = {
+      headers: headers,
+    };
+
+    axios
+      .get(sURL, config)
+      .then((response) => {
+        let repoId = "";
+        // if i only more than one repository repoAndConnectionInfos is an array
+        if (Array.isArray(response.data["repoAndConnectionInfos"])) {
+          let repositoryIndex = response.data.repoAndConnectionInfos.findIndex(
+            (elem) => {
+              return elem.repository.name === sRepositoryName;
+            }
+          );
+          repoId =
+            response.data.repoAndConnectionInfos[repositoryIndex].repository.id;
+        } else {
+          repoId = response.data.repoAndConnectionInfos.repository.id;
+        }
+
+        resolve(repoId);
+      })
+      .catch((error) => {
+        reject(error);
+      });
+  });
+};
+
 // only reads json files
 const _ReadFile = async function (jwtToken, sRepositoryID, sFilename) {
   return new Promise((resolve, reject) => {
     if (sRepositoryID) {
       var sQueryString = "";
 
-      var sURL = sDMSURL + "browser/" + sRepositoryID + "/root/" + sFilename;
+      var sURL =
+        sDMSURL + "browser/" + sRepositoryID + "/root/demos_back/" + sFilename;
       if (sQueryString) {
         sURL += sQueryString;
       }
@@ -403,9 +440,12 @@ const _ReadFile = async function (jwtToken, sRepositoryID, sFilename) {
 
 async function handleProject(project, projectPath, restOfPathGet) {
   try {
-    const sRepositoryID = "57ef70a1-073e-4443-a1cf-a33872276f5e";
     const sFileName = projectPath + ".json";
     const tokenDMS = await _fetchJwtToken();
+    const sRepositoryID = await _GetRepositoryId(
+      tokenDMS,
+      "DEMO_BLUEBOOT_REPO"
+    );
     const responseJSONFile = await _ReadFile(
       tokenDMS,
       sRepositoryID,
