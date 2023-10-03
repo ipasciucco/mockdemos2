@@ -3,7 +3,7 @@ applications:
 - name: mock
   random-route: true
   path: mock
-  memory: 128M
+  memory: 256M
   buildpack: nodejs_buildpack
   services:
   - dms
